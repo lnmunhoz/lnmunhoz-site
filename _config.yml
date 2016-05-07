@@ -13,4 +13,7 @@ permalink: pretty
 google_analytics: UA-59513662-1
 disqus_shortname:
 
+sass:
+  style: compressed
+
 exclude: [node_modules, gulpfile.js]
