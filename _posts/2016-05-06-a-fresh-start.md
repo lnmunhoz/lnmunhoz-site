@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  A Fresh Start
-date:   2015-05-06 12:00:00
+date:   2016-05-06 12:00:00
 ---
 
 Start simple and keep improving. I decided to create a new website and keep it smaller and clean.
