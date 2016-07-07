@@ -1,3 +1,34 @@
 {% include css/bootstrap.min.css %}
 {% include css/agency.css %}
+{% include css/nav.css %}
+{% include css/header.css %}
+{% include css/about.css %}
 {{ content }}
+
+.cursor {
+  color: white;
+  animation: blink 1s infinite;
+  &:before {
+    content: "|";
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  90%{
+    width: 100;
+    opacity: 1;
+  }
+  100% {
+    width: 100;
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
