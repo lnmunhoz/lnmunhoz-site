@@ -1,15 +1,15 @@
 ---
-title: Dreams
-subtitle: Website Design
+title: Ajudanca
+subtitle: Web Development
 layout: default
 modal-id: 1
 date: 2014-07-18
-img: dreams.png
-thumbnail: dreams-thumbnail.png
+img: ajudanca_projects.png
+thumbnail: ajudanca_thumbnail.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
+project-date: November 2015
+client: FazInova
 category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+description: Ajudanca was a web platform for people share their project ideas and vote in the best ones. This project was created for the Bel Pesce Tour in 2015, and the most voted ideas were be presented in the talks all around Brazil. The project had more than 80k users, 30k projects submissions and 300k votes. 
 
 ---

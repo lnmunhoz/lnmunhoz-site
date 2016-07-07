@@ -1,11 +1,11 @@
 ---
-title: LionTax Landing Page
-subtitle: Web Development
+title: LionTax Calendar
+subtitle: Mobile Development
 layout: default
-modal-id: 6
+modal-id: 7
 date: 2014-07-15
-img: liontax-landing.png
-thumbnail: liontax-landing-thumbnail.png
+img: liontax-calendar.png
+thumbnail: liontax-calendar-thumbnail.png
 alt: image-alt
 project-date: April 2014
 client: Start Bootstrap

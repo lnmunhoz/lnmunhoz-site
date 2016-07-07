@@ -1,15 +1,15 @@
 ---
-title: Escape
-subtitle: Website Design
+title: Dobox
+subtitle: Web Development
 layout: default
 modal-id: 2
 date: 2014-07-17
-img: escape.png
-thumbnail: escape-thumbnail.png
+img: dobox.jpg
+thumbnail: dobox-thumbnail.png
 alt: image-alt
 project-date: April 2014
-client: Start Bootstrap
+client: Dobox
 category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+description: Dobox is classifieds with integrated payments, real-time messaging, social proof & so much more! I am currently maintaining and monitoring the application, fixing bugs and making daily improvements.
 
 ---
