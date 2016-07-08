@@ -2,7 +2,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    /*background-image: url('{{ site.baseurl }}/img/header-bg.jpg');*/
+    background-image: url('{{ site.baseurl }}/img/header-bg-21.jpg');
     background-color: var(--color-dark-green);
     background-position: center center;
     background-repeat: none;
@@ -26,8 +26,8 @@ header .intro-text .intro-lead-in {
 }
 
 header .intro-text .intro-heading {
-    color: #98c379;
-    text-shadow: 0px 0px 10px;
+    color: white;
+    /*text-shadow: 0px 0px 10px;*/
     margin-bottom: 25px;
     /*text-transform: uppercase;*/
     font-family: {{ site.data.template.font.primary }};
@@ -38,8 +38,6 @@ header .intro-text .intro-heading {
 }
 
 header .intro-text .intro-heading.intro-heading-below {
-  color: #e06c75;
-  text-shadow: 0px 0px 10px;
   font-size: 29px;
 }
 

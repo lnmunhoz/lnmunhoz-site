@@ -10,6 +10,6 @@ alt: image-alt
 project-date: April 2014
 client: Start Bootstrap
 category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+description: Designed for executives and professionals who travel the world to work, the Lion Calendar records, via geolocation, the days you spend in each country, allowing you to stay in control of their tax and regulatory issues. You have in the palm of your hand control of their travel and receive important alerts for managing its permanence times.
 
 ---

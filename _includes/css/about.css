@@ -1,3 +1,19 @@
-section#about {
+section#about h2.section-heading {
+  margin-bottom: 25px;
+}
 
+section#about p {
+  padding: 20px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+@media (min-width: 768px) {
+  section#about h2.section-heading {
+    margin-bottom: 50px;
+  }
+
+  section#about p {
+    padding: 0px;
+  }
 }
