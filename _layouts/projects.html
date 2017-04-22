@@ -1,0 +1,16 @@
+---
+layout: page
+---
+
+<div class="projects-page">
+   <ul class="projects__list">
+    {% for project in page.projects %}
+      <li>
+        <span class="post-meta">{{ project.year }}</span>
+        <h2>
+          <a class="post-link" href="{{ project.url }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

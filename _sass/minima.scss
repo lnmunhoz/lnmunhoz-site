@@ -2,7 +2,7 @@
 
 // Define defaults for each variable.
 
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-family: 'Open Sans', sans-serif;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
@@ -49,11 +49,107 @@ $on-laptop:        800px !default;
 ;
 
 // Custom
-.avatar {
-  border-radius: 50%;
-  width: 100px;
+#me {
+  .avatar-wrapper {
+    margin: 10px 0px 15px 0px;
+    .avatar {
+      max-width: 150px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+    }
+  }
 }
+
+
 
 .wrapper--centered, .footer--centered {
   text-align: center;
 }
+
+.nav {
+  .nav__list {
+    margin-left: 0;
+    list-style: none;
+
+    .nav__item {
+      font-size: 18px;
+      display: inline-block;
+      padding: 10px 20px;
+      letter-spacing: 0.1em;
+      
+      .nav__link {
+        color: rgba(0, 0, 0, 0.5);
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: rgba(0, 0, 0, 1);
+          text-decoration: none;
+        }
+      }
+    }
+
+    .nav__item--active {
+      .nav__link {
+        color: black;
+      }
+    }
+  }
+}
+
+.page {
+  .page__header {
+    text-align: center;
+
+    .page__title {
+      font-weight: 200;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.contact__list {
+  .contact__item {
+    margin: 4px 0px;
+    .contact__link {
+      font-weight: 600;
+      color: rgba(40, 2, 157, 0.94);
+    }
+  }
+}
+
+.travels {
+  margin-left: 0px;
+  list-style: none;
+  .travels__item {
+    padding: 10px;
+
+    .travels__country-flag {
+      margin-right: 5px;
+    }
+ }
+}
+
+.contact-btn {
+  background-color: black;
+  color: white;
+  outline: 0;
+  font-weight: 200;
+  padding: 20px 30px;
+  font-size: 1.2em;
+  border: 2px solid black;
+  transition: all 0.25s ease;
+  
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid black;
+    font-weight: 300;
+    color: black;
+    background-color: white;  
+  }
+}
+
+#me {
+  text-align: center;
+}
+ 

@@ -1,40 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
   {% include head.html %}
-
   <body>
-
-    <!--{% include header.html %}-->
-
     <main class="page-content" aria-label="Content">
-
       <div class="wrapper wrapper--centered">
-        <img 
-          class="avatar"
-          src='{{ "/img/me.jpeg" | relative_url }}' 
-        />
-
-        <h3> Lucas N. Munhoz </h3>
-
-        <p> 
-          Hi! I lost count of how many times I build a website for me, and I always ended up
-          using complicated technology that makes me lost a lot of time just configuring. This time
-          I decided to stick with Jekyll, because this is not an app, its just a website. 
-        </p>
-
-
+        {% include navigation.html %}
       </div>
-
-      
-
-      <!--<div class="wrapper">
+      <div class="wrapper">
         {{ content }}
-      </div>-->
+      </div>
     </main>
-
     {% include footer.html %}
-
   </body>
-
 </html>

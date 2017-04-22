@@ -1,0 +1,40 @@
+---
+layout: page
+---
+
+<div id="connect">
+  <section class="contact">
+    <h2>➡ Contact</h2>
+    <ul class="contact__list">
+      <li class="contact__item">Email: 
+          <a class="contact__link" href="mailto:{{site.contact_email}}">{{site.contact_email}}</a>
+      </li>
+
+      {% for link in site.contact_links %}
+        {% include contact__item.html link=link %}
+      {% endfor %}
+
+      <li class="contact__item">
+        <a href="" onclick="Calendly.showPopupWidget('https://calendly.com/lnmunhoz/30min');return false;">Book a call with me</a>
+      </li>
+    </ul>
+  </section>
+<!-- Calendly link widget begin -->
+<link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<!-- Calendly link widget end -->
+
+<section id="travel">
+  <h2>🌏 Location</h2>
+  <p>I am living a location independent lifestyle. If you are or will be in one of my next destinations, lets grab a coffee or something :)</p>
+  <ul>
+    <li><b>May 07 ~ ?:</b> Chiang Mai, Thailand 🇹🇭 </li>
+    <li><b>May 01 ~ May 07:</b> Kuala Lumpur, Malasya 🇲🇾 </li>
+    <li><b>Apr 01 ~ Apr 30:</b> Ko Lanta, Thailand 🇹🇭 </li>
+    <li><b>Feb 01 ~ Apr 01:</b> Bangkok, Thailand 🇹🇭 </li>
+</ul>
+</section>
+
+</div>
+
+
