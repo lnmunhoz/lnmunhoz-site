@@ -20,7 +20,7 @@ permalink: /about/
     - Started work remotely
 - **2015:** 
     - Started work as a freelancer
-    - Graduate 🎓
+    - Graduated 🎓
 - **2016:**
     - Joined <a href="http://envisioning.io">Envisioning</a> and <a href="https://www.toptal.com/#utilize-amazing-computer-engineers-now">Toptal</a>
     - Worked remotely for companies in Brazil, UK (Coventry) and US (Atlanta)
