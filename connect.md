@@ -1,6 +1,7 @@
 ---
 layout: connect
-title: CONNECT
+title: Connect
+header: CONNECT
 permalink: /connect/
 ---
 
