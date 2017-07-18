@@ -1,8 +1,1 @@
-{
-  "2017.07.18": [
-    {
-      "url": "http://google.com",
-      "title": "A Google search for testing."
-      }
-    ]
-}
+{"2017.07.18":[{"url":"http://google.com","title":"A Google search for testing."},{"title":"Test","url":"http://newurl.com"}]}
