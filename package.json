@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "lnmunhoz.github.io",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Lucas's personal website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Lucas N/ Munhoz <ln.munhoz@gmail.com>",
   "dependencies": {
     "gatsby": "^2.13.31",
     "gatsby-image": "^2.2.6",
