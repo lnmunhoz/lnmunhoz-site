@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/lnmunhoz.github.io",
   siteMetadata: {
     title: `Lucas N. Munhoz`,
     author: `Lucas N. Munhoz`,
