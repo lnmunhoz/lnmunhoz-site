@@ -2,9 +2,13 @@
 title: My Go To Technology Stack for 2019
 description: Technologies for 2019
 date: "2019-07-29T14:42:00.276Z"
+status: draft
+tags:
+  - fullstack
 ---
 
-![https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80](https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
+![https://images.unsplash.com/photo-1489389944381-3471b5b30f04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80](https://images.unsplash.com/photo-1431576901776-e539bd916ba2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80)
+Picture by [Alex Wong](https://unsplash.com/@killerfvith)
 
 ---
 
@@ -16,7 +20,7 @@ The is from far the best choise I've made for my latest projects.
 
 It's ok to use vanilla JavaScript if you are only testing a concept or making a 1 day project to play around with some technology, but if you want to build a solid project, TypeScript is your hero.
 
-Having types really encourages you to write more reliable scalable code. It may be a little bit of a learning curve in the beginning, but trust me, it will all pay off when you ship applications that don't break often
+Having types really encourages you to write more reliable scalable code. It may be a little bit of a learning curve in the beginning, but trust me, it will all pay off when you ship applications that don't break because of silly mistakes.
 
 > I have to admit, I was skeptical when TypeScript came to the scene a few years ago. From 2012 to 2015, I was a .NET developer, and I wanted to switch my career path to work with full stack JavaScript because I was tired of Windows and Visual Studio. I remember when I finally quit .NET and all those typings and classes and I didn't took to long to TypeScript start to gain popularity and show it's true potential.
 
@@ -50,11 +54,11 @@ I can't recommend both enough!
 
 ### Apollo Client
 
-For managing data fetching and your application state, Apollo Client provides
+...
 
 ### Mobx
 
-tbd
+...
 
 ## TLDR;
 
@@ -69,4 +73,9 @@ tbd
 - Mongoose - ORM for MongoDB
 - TypeORM - ORM for SQL databases
 
+<br />
+
+<hr />
 <center><i>"The reason why one man is great and another man is living in mediocrity is simply because one understood the value of time while the other did not."</i></center>
+
+<br />
