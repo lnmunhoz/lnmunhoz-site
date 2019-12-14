@@ -1,16 +1,4 @@
 {
-  "presets": [
-    "next/babel"
-  ],
-  "plugins": [
-    [
-      "emotion",
-      {
-        // sourceMap is on by default but source maps are dead code eliminated in production
-        "sourceMap": true,
-        "labelFormat": "[local]",
-        "cssPropOptimization": true
-      }
-    ]
-  ]
+  "presets": ["next/babel"],
+  "plugins": [["emotion"]]
 }

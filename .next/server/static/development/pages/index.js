@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -178,6 +178,28 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/symbol.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/symbol */ "core-js/library/fn/symbol");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "core-js/library/fn/symbol/iterator");
 
 /***/ }),
 
@@ -352,6 +374,8 @@ var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! ../core-js/object
 
 var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
+var _typeof = __webpack_require__(/*! ../helpers/typeof */ "./node_modules/@babel/runtime-corejs2/helpers/typeof.js");
+
 var _WeakMap = __webpack_require__(/*! ../core-js/weak-map */ "./node_modules/@babel/runtime-corejs2/core-js/weak-map.js");
 
 function _getRequireWildcardCache() {
@@ -370,6 +394,12 @@ function _interopRequireWildcard(obj) {
     return obj;
   }
 
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
   var cache = _getRequireWildcardCache();
 
   if (cache && cache.has(obj)) {
@@ -377,19 +407,16 @@ function _interopRequireWildcard(obj) {
   }
 
   var newObj = {};
+  var hasPropertyDescriptor = _Object$defineProperty && _Object$getOwnPropertyDescriptor;
 
-  if (obj != null) {
-    var hasPropertyDescriptor = _Object$defineProperty && _Object$getOwnPropertyDescriptor;
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? _Object$getOwnPropertyDescriptor(obj, key) : null;
 
-    for (var key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? _Object$getOwnPropertyDescriptor(obj, key) : null;
-
-        if (desc && (desc.get || desc.set)) {
-          _Object$defineProperty(newObj, key, desc);
-        } else {
-          newObj[key] = obj[key];
-        }
+      if (desc && (desc.get || desc.set)) {
+        _Object$defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
       }
     }
   }
@@ -404,6 +431,37 @@ function _interopRequireWildcard(obj) {
 }
 
 module.exports = _interopRequireWildcard;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/typeof.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/typeof.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Symbol$iterator = __webpack_require__(/*! ../core-js/symbol/iterator */ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js");
+
+var _Symbol = __webpack_require__(/*! ../core-js/symbol */ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js");
+
+function _typeof2(obj) { if (typeof _Symbol === "function" && typeof _Symbol$iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof _Symbol === "function" && obj.constructor === _Symbol && obj !== _Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof _Symbol === "function" && _typeof2(_Symbol$iterator) === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof _Symbol === "function" && obj.constructor === _Symbol && obj !== _Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
 
 /***/ }),
 
@@ -437,8 +495,6 @@ var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node
 var _rewriteUrlForExport = __webpack_require__(/*! ../next-server/lib/router/rewrite-url-for-export */ "./node_modules/next/dist/next-server/lib/router/rewrite-url-for-export.js");
 
 var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
-/* global __NEXT_DATA__ */
-
 
 function isLocal(href) {
   var url = (0, _url.parse)(href, false, true);
@@ -745,8 +801,6 @@ exports.NextRouter = _router2.NextRouter;
 
 var _routerContext = __webpack_require__(/*! ../next-server/lib/router-context */ "./node_modules/next/dist/next-server/lib/router-context.js");
 
-exports.RouterContext = _routerContext.RouterContext;
-
 var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
 
 exports.withRouter = _withRouter.default;
@@ -903,33 +957,22 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 var _router = __webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js");
 
 function withRouter(ComposedComponent) {
-  class WithRouteWrapper extends _react.default.Component {
-    constructor() {
-      super(...arguments);
-      this.context = void 0;
-    }
-
-    render() {
-      return _react.default.createElement(ComposedComponent, (0, _extends2.default)({
-        router: this.context
-      }, this.props));
-    }
-
+  function WithRouterWrapper(props) {
+    return _react.default.createElement(ComposedComponent, (0, _extends2.default)({
+      router: (0, _router.useRouter)()
+    }, props));
   }
 
-  WithRouteWrapper.displayName = void 0;
-  WithRouteWrapper.getInitialProps = void 0;
-  WithRouteWrapper.contextType = _router.RouterContext;
-  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
+  WithRouterWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
   ;
-  WithRouteWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
+  WithRouterWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
 
   if (true) {
     var name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
-    WithRouteWrapper.displayName = "withRouter(" + name + ")";
+    WithRouterWrapper.displayName = "withRouter(" + name + ")";
   }
 
-  return WithRouteWrapper;
+  return WithRouterWrapper;
 }
 
 /***/ }),
@@ -980,6 +1023,7 @@ function mitt() {
     },
 
     emit(type, ...evts) {
+      // eslint-disable-next-line array-callback-return
       ;
       (all[type] || []).slice().map(handler => {
         handler(...evts);
@@ -1089,11 +1133,11 @@ const utils_1 = __webpack_require__(/*! ../utils */ "./node_modules/next/dist/ne
 
 const rewrite_url_for_export_1 = __webpack_require__(/*! ./rewrite-url-for-export */ "./node_modules/next/dist/next-server/lib/router/rewrite-url-for-export.js");
 
+const is_dynamic_1 = __webpack_require__(/*! ./utils/is-dynamic */ "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.js");
+
 const route_matcher_1 = __webpack_require__(/*! ./utils/route-matcher */ "./node_modules/next/dist/next-server/lib/router/utils/route-matcher.js");
 
 const route_regex_1 = __webpack_require__(/*! ./utils/route-regex */ "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js");
-
-const is_dynamic_1 = __webpack_require__(/*! ./utils/is-dynamic */ "./node_modules/next/dist/next-server/lib/router/utils/is-dynamic.js");
 
 function toRoute(path) {
   return path.replace(/\/$/, '') || '/';
@@ -1133,7 +1177,7 @@ class Router {
       // can be caused by navigating back from an external site
 
 
-      if (e.state.options && e.state.options.historyId !== this.historyId) {
+      if (e.state && this.isSsr && e.state.url === this.pathname && e.state.as === this.asPath) {
         return;
       } // If the downstream application returns falsy, return.
       // They will then be responsible for handling the event.
@@ -1186,12 +1230,13 @@ class Router {
     // until after mount to prevent hydration mismatch
 
     this.asPath = // @ts-ignore this is temporarily global (attached to window)
-    is_dynamic_1.isDynamicRoute(pathname) && __NEXT_DATA__.nextExport ? pathname : as;
+    is_dynamic_1.isDynamicRoute(pathname) && __NEXT_DATA__.autoExport ? pathname : as;
     this.sub = subscription;
     this.clc = null;
-    this._wrapApp = wrapApp; // we use a historyId to enable ignoring invalid popstates
+    this._wrapApp = wrapApp; // make sure to ignore extra popState in safari on navigating
+    // back from external site
 
-    this.historyId = Math.random();
+    this.isSsr = true;
 
     if (false) {}
   } // @deprecated backwards compatibility even though it's a private method.
@@ -1261,7 +1306,11 @@ class Router {
 
   change(method, _url, _as, options) {
     return new _Promise((resolve, reject) => {
-      // marking route changes as a navigation start entry
+      if (!options._h) {
+        this.isSsr = false;
+      } // marking route changes as a navigation start entry
+
+
       if (utils_1.SUPPORTS_PERFORMANCE_USER_TIMING) {
         performance.mark('routeChange');
       } // If url and as provided as an object representation,
@@ -1322,11 +1371,10 @@ class Router {
         const {
           pathname: asPathname
         } = url_1.parse(as);
-        const rr = route_regex_1.getRouteRegex(route);
-        const routeMatch = route_matcher_1.getRouteMatcher(rr)(asPathname);
+        const routeMatch = route_matcher_1.getRouteMatcher(route_regex_1.getRouteRegex(route))(asPathname);
 
         if (!routeMatch) {
-          const error = 'The provided `as` value is incompatible with the `href` value. This is invalid. https://err.sh/zeit/next.js/incompatible-href-as';
+          const error = `The provided \`as\` value (${asPathname}) is incompatible with the \`href\` value (${route}). ` + `Read more: https://err.sh/zeit/next.js/incompatible-href-as`;
 
           if (true) {
             throw new Error(error);
@@ -1395,9 +1443,7 @@ class Router {
       window.history[method]({
         url,
         as,
-        options: _Object$assign({}, options, {
-          historyId: this.historyId
-        })
+        options
       }, null, as);
     }
   }
@@ -1710,7 +1756,7 @@ _Object$defineProperty(exports, "__esModule", {
 }); // Identify /[param]/ in route string
 
 
-const TEST_ROUTE = /\/\[[^\/]+?\](?=\/|$)/;
+const TEST_ROUTE = /\/\[[^/]+?\](?=\/|$)/;
 
 function isDynamicRoute(route) {
   return TEST_ROUTE.test(route);
@@ -1750,13 +1796,15 @@ function getRouteMatcher(routeRegex) {
       return false;
     }
 
+    const decode = decodeURIComponent;
     const params = {};
 
     _Object$keys(groups).forEach(slugName => {
-      const m = routeMatch[groups[slugName]];
+      const g = groups[slugName];
+      const m = routeMatch[g.pos];
 
       if (m !== undefined) {
-        params[slugName] = decodeURIComponent(m);
+        params[slugName] = ~m.indexOf('/') ? m.split('/').map(entry => decode(entry)) : g.repeat ? [decode(m)] : decode(m);
       }
     });
 
@@ -1789,8 +1837,16 @@ function getRouteRegex(normalizedRoute) {
   const escapedRoute = (normalizedRoute.replace(/\/$/, '') || '/').replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&');
   const groups = {};
   let groupIndex = 1;
-  const parameterizedRoute = escapedRoute.replace(/\/\\\[([^\/]+?)\\\](?=\/|$)/g, (_, $1) => (groups[$1 // Un-escape key
-  .replace(/\\([|\\{}()[\]^$+*?.-])/g, '$1')] = groupIndex++, '/([^/]+?)'));
+  const parameterizedRoute = escapedRoute.replace(/\/\\\[([^/]+?)\\\](?=\/|$)/g, (_, $1) => {
+    const isCatchAll = /^(\\\.){3}/.test($1);
+    groups[$1 // Un-escape key
+    .replace(/\\([|\\{}()[\]^$+*?.-])/g, '$1').replace(/^\.{3}/, '') // eslint-disable-next-line no-sequences
+    ] = {
+      pos: groupIndex++,
+      repeat: isCatchAll
+    };
+    return isCatchAll ? '/(.+?)' : '/([^/]+?)';
+  });
   return {
     re: new RegExp('^' + parameterizedRoute + '(?:/)?$', 'i'),
     groups
@@ -2210,12 +2266,12 @@ if (false) {} else {
 /*!***********************************!*\
   !*** ./src/components/Footer.tsx ***!
   \***********************************/
-/*! exports provided: Footer */
+/*! exports provided: SocialIcons */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Footer", function() { return Footer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocialIcons", function() { return SocialIcons; });
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
@@ -2233,11 +2289,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
-const Footer = () => __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Flex"], {
+const SocialIcons = () => __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Flex"], {
   width: "100%",
-  as: "footer",
-  position: "absolute",
-  bottom: 0,
   height: 12,
   fontSize: 12,
   justifyContent: "center",
@@ -2251,21 +2304,53 @@ const Footer = () => __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Flex"],
   prefetch: false,
   external: true,
   p: 2,
-  height: "32px",
+  height: "36px",
   key: key,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 19
+    lineNumber: 10
   },
   __self: undefined
 }, __jsx(_Icons__WEBPACK_IMPORTED_MODULE_4__["SocialIcon"], {
   name: key,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 27
+    lineNumber: 18
   },
   __self: undefined
 }))));
+
+/***/ }),
+
+/***/ "./src/components/GithubAvatar.tsx":
+/*!*****************************************!*\
+  !*** ./src/components/GithubAvatar.tsx ***!
+  \*****************************************/
+/*! exports provided: GithubAvatar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GithubAvatar", function() { return GithubAvatar; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__);
+
+var _jsxFileName = "/Users/lnmunhoz/projects/lnmunhoz/lnmunhoz.github.io/src/components/GithubAvatar.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+const GithubAvatar = props => __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_2__["Image"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+  src: "https://avatars2.githubusercontent.com/u/4376835?s=460&v=4"
+}, props, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5
+  },
+  __self: undefined
+}));
 
 /***/ }),
 
@@ -2363,7 +2448,7 @@ const SocialIcon = (_ref) => {
   }
 };
 SocialIcon.defaultProps = {
-  size: 4
+  size: 6
 };
 
 /***/ }),
@@ -2372,86 +2457,83 @@ SocialIcon.defaultProps = {
 /*!***********************************!*\
   !*** ./src/components/Layout.tsx ***!
   \***********************************/
-/*! exports provided: Layout */
+/*! exports provided: SiteWrapper, SiteSection, Layout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SiteWrapper", function() { return SiteWrapper; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SiteSection", function() { return SiteSection; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Layout", function() { return Layout; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./src/components/Nav.tsx");
-/* harmony import */ var _Spacer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Spacer */ "./src/components/Spacer.tsx");
-/* harmony import */ var _ThemeSwitcher__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeSwitcher */ "./src/components/ThemeSwitcher.tsx");
-/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Footer */ "./src/components/Footer.tsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Nav */ "./src/components/Nav.tsx");
+
 var _jsxFileName = "/Users/lnmunhoz/projects/lnmunhoz/lnmunhoz.github.io/src/components/Layout.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
-
-
-
+const SiteWrapper = props => __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+  pt: "80px",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 7
+  },
+  __self: undefined
+}), props.children);
+const SiteSection = props => __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+  p: 5,
+  py: 5
+}, props, {
+  display: "flex"
+}, props, {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 13
+  },
+  __self: undefined
+}), props.children);
 const Layout = props => {
+  const {
+    colorMode,
+    toggleColorMode
+  } = Object(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["useColorMode"])();
+  const bg = {
+    light: "gray.200",
+    dark: "rgb(17, 21, 31)"
+  };
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(() => {
+    const darkMode = localStorage.getItem("darkMode");
+
+    if (darkMode === "true" && colorMode === "dark") {
+      toggleColorMode();
+    }
+  }, []);
   return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-    height: "100%",
+    bg: bg[colorMode],
+    minHeight: "100%",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 31
     },
     __self: undefined
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Flex"], {
-    height: "inherit",
-    p: 12,
+  }, __jsx(_Nav__WEBPACK_IMPORTED_MODULE_3__["Nav"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 32
     },
     __self: undefined
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-    width: [22 / 24],
-    position: "relative",
+  }), __jsx(SiteWrapper, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 34
     },
     __self: undefined
-  }, __jsx(_Nav__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }), __jsx(_Spacer__WEBPACK_IMPORTED_MODULE_3__["Spacer"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: undefined
-  }), props.children, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-    position: "absolute",
-    right: 0,
-    top: 0,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }, __jsx(_ThemeSwitcher__WEBPACK_IMPORTED_MODULE_4__["ThemeSwitcher"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  })))), __jsx(_Footer__WEBPACK_IMPORTED_MODULE_5__["Footer"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: undefined
-  }));
+  }, props.children));
 };
 
 /***/ }),
@@ -2532,33 +2614,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ThemeSwitcher__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThemeSwitcher */ "./src/components/ThemeSwitcher.tsx");
 var _jsxFileName = "/Users/lnmunhoz/projects/lnmunhoz/lnmunhoz.github.io/src/components/Nav.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 
+
 const Nav = () => {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Flex"], {
+    fontFamily: "Menlo",
     alignItems: "center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 7
+    bg: "rgb(25, 31, 44)",
+    position: "fixed",
+    top: 0,
+    width: "100%",
+    px: 4,
+    py: {
+      small: 3
     },
-    __self: undefined
-  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Heading"], {
-    size: "lg",
+    justifyContent: "space-between",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     },
     __self: undefined
-  }, "lnmunhoz.dev")), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
-    as: "nav",
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 19
     },
     __self: undefined
-  }, "Home, About, Experience, Contact"));
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    color: "white",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, "lnmunhoz.dev"), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    opacity: 0.8,
+    fontSize: 12,
+    color: "white",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, "> fullStackDeveloper()")), __jsx(_ThemeSwitcher__WEBPACK_IMPORTED_MODULE_2__["ThemeSwitcher"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  })));
 };
 
 /***/ }),
@@ -2595,58 +2703,42 @@ Spacer.defaultProps = {
 
 /***/ }),
 
-/***/ "./src/components/TechnologiesSection.tsx":
-/*!************************************************!*\
-  !*** ./src/components/TechnologiesSection.tsx ***!
-  \************************************************/
-/*! exports provided: TechnologiesSection */
+/***/ "./src/components/Strong.tsx":
+/*!***********************************!*\
+  !*** ./src/components/Strong.tsx ***!
+  \***********************************/
+/*! exports provided: Strong */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TechnologiesSection", function() { return TechnologiesSection; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
-/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Spacer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Spacer */ "./src/components/Spacer.tsx");
-/* harmony import */ var _metadata__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../metadata */ "./src/metadata.ts");
-var _jsxFileName = "/Users/lnmunhoz/projects/lnmunhoz/lnmunhoz.github.io/src/components/TechnologiesSection.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Strong", function() { return Strong; });
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @chakra-ui/core */ "@chakra-ui/core");
+/* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/lnmunhoz/projects/lnmunhoz/lnmunhoz.github.io/src/components/Strong.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
-
-
-const TechnologiesSection = () => {
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["Heading"], {
-    size: "md",
+const Strong = props => {
+  const {
+    colorMode
+  } = Object(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["useColorMode"])();
+  const color = {
+    light: "purple.700",
+    dark: "purple.400"
+  };
+  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Box"], {
+    as: "strong",
+    display: "inline",
+    color: color[colorMode],
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: undefined
-  }, "Technologies:"), __jsx(_Spacer__WEBPACK_IMPORTED_MODULE_2__["Spacer"], {
-    size: 1,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: undefined
-  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["List"], {
-    styleType: "disc",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: undefined
-  }, _metadata__WEBPACK_IMPORTED_MODULE_3__["default"].technologies.map(item => __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_1__["ListItem"], {
-    key: item,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: undefined
-  }, " ", item))));
+  }, props.children);
 };
 
 /***/ }),
@@ -2675,9 +2767,12 @@ const ThemeSwitcher = () => {
     toggleColorMode
   } = Object(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["useColorMode"])();
   return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["IconButton"], {
-    bg: "transparent",
+    variant: "outline",
+    variantColor: "none",
+    border: "none",
     "aria-label": `Toggle ${colorMode === "dark" ? "light" : "dark"} mode`,
     icon: colorMode === "dark" ? "sun" : "moon",
+    color: "white",
     onClick: () => toggleColorMode(),
     __source: {
       fileName: _jsxFileName,
@@ -2722,9 +2817,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _chakra_ui_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.tsx");
-/* harmony import */ var _components_TechnologiesSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/TechnologiesSection */ "./src/components/TechnologiesSection.tsx");
-/* harmony import */ var _components_Spacer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Spacer */ "./src/components/Spacer.tsx");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Footer */ "./src/components/Footer.tsx");
+/* harmony import */ var _components_GithubAvatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/GithubAvatar */ "./src/components/GithubAvatar.tsx");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Layout */ "./src/components/Layout.tsx");
+/* harmony import */ var _components_Spacer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Spacer */ "./src/components/Spacer.tsx");
+/* harmony import */ var _components_Strong__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Strong */ "./src/components/Strong.tsx");
 var _jsxFileName = "/Users/lnmunhoz/projects/lnmunhoz/lnmunhoz.github.io/src/pages/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -2733,127 +2830,156 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-const SocialLinks = () => {
-  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Box"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: undefined
-  });
-};
 
-const MyPicture = () => __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Image"], {
-  src: "/static/images/me.jpg",
-  borderRadius: "10%",
-  width: "98px",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-});
-
-const TypeScriptBox = () => {
-  return __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["PseudoBox"], {
-    as: "span",
-    transition: "0.3s ease",
-    _hover: {
-      background: "rgb(60, 119, 199)",
-      fontWeight: "bold",
-      px: 4,
-      py: 3,
-      color: "white",
-      boxShadow: "0px 1px 6px 1px rgba(0,0,0, 0.2)",
-      userSelect: "none"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, "TypeScript.", " ");
-};
 
 const Index = () => {
-  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_2__["Layout"], {
+  return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["Layout"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["SiteSection"], {
+    justifyContent: "center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Flex"], {
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: {
+      default: "100%",
+      small: "100%"
+    },
+    maxWidth: 312,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Heading"], {
+    fontSize: {
+      default: 22,
+      small: 26
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, "Whats up! I'm", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }), "Lucas Munhoz"), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Box"], {
+    width: {
+      small: 100
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, __jsx(_components_GithubAvatar__WEBPACK_IMPORTED_MODULE_3__["GithubAvatar"], {
+    borderRadius: "50%",
+    width: {
+      default: "100%"
+    },
+    boxShadow: "3px 2px 5px 0px rgba(0,0,0,0.3)",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  })))), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_5__["Spacer"], {
+    size: 2,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }), __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_4__["SiteSection"], {
+    justifyContent: "center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: undefined
+  }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Box"], {
+    maxWidth: 624,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37
     },
     __self: undefined
   }, __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Text"], {
-    textAlign: "justify",
+    fontSize: 20,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 38
     },
     __self: undefined
-  }, "Hello! Welcome to my website :D"), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_4__["Spacer"], {
+  }, "I am passionate ", __jsx(_components_Strong__WEBPACK_IMPORTED_MODULE_6__["Strong"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
     },
     __self: undefined
-  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Text"], {
-    textAlign: "justify",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: undefined
-  }, "I am passionate full stack developer, currently living in Bangkok, Thailand."), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_4__["Spacer"], {
+  }, "full stack developer"), ", currently living in beautiful Bangkok, Thailand."), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_5__["Spacer"], {
     size: 2,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 42
     },
     __self: undefined
   }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Text"], {
-    textAlign: "justify",
+    fontSize: 20,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 43
     },
     __self: undefined
-  }, "For the past 8 years, I've had the opportunity to work with a variety of technolgies including .NET, Python, Ruby, and a lot of", " ", __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Box"], {
+  }, "For the past 8 years, I've had the opportunity to work with a variety of technolgies including .NET, Python, Ruby, and most recently, a ton of", " ", __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Box"], {
     as: "span",
     textDecoration: "line-through",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 47
     },
     __self: undefined
-  }, "JavaScript"), " ", __jsx(TypeScriptBox, {
+  }, "JavaScript"), " ", __jsx(_components_Strong__WEBPACK_IMPORTED_MODULE_6__["Strong"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, "TypeScript"), ".", __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_5__["Spacer"], {
+    size: 2,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: undefined
+  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Text"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 52
     },
     __self: undefined
-  }), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_4__["Spacer"], {
-    size: 2,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
-    },
-    __self: undefined
-  }), __jsx(_chakra_ui_core__WEBPACK_IMPORTED_MODULE_0__["Text"], {
-    textAlign: "justify",
+  }, "On a daily basis, my goal is to create", " ", __jsx(_components_Strong__WEBPACK_IMPORTED_MODULE_6__["Strong"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 54
     },
     __self: undefined
-  }, "On a daily basis, my goal is to create software that matters for end users while writing elegant and maintainable code, and always finding the balance between quality and time.")), __jsx(_components_Spacer__WEBPACK_IMPORTED_MODULE_4__["Spacer"], {
+  }, "software that matters"), " for end users while writing elegant and maintainable code, and always finding the balance between quality and time.")))), __jsx(_components_Footer__WEBPACK_IMPORTED_MODULE_2__["SocialIcons"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
-    },
-    __self: undefined
-  }), __jsx(_components_TechnologiesSection__WEBPACK_IMPORTED_MODULE_3__["TechnologiesSection"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 62
     },
     __self: undefined
   }));
@@ -2863,7 +2989,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/
@@ -2971,6 +3097,28 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "core-js/library/fn/symbol":
+/*!********************************************!*\
+  !*** external "core-js/library/fn/symbol" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/symbol");
+
+/***/ }),
+
+/***/ "core-js/library/fn/symbol/iterator":
+/*!*****************************************************!*\
+  !*** external "core-js/library/fn/symbol/iterator" ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/symbol/iterator");
 
 /***/ }),
 

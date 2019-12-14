@@ -4,24 +4,15 @@ import metadata from "../metadata";
 import { SocialIcon, SocialIconProps } from "./Icons";
 import { Link } from "./Link";
 
-export const Footer = () => (
-  <Flex
-    width={"100%"}
-    as="footer"
-    position="absolute"
-    bottom={0}
-    height={12}
-    fontSize={12}
-    justifyContent="center"
-  >
-    {/* <Box>made with love in Thailand</Box> */}
+export const SocialIcons = () => (
+  <Flex width={"100%"} height={12} fontSize={12} justifyContent="center">
     {Object.keys(metadata.socialLinks).map(key => (
       <Link
         href={metadata.socialLinks[key]}
         prefetch={false}
         external
         p={2}
-        height={"32px"}
+        height={"36px"}
         key={key}
       >
         <SocialIcon name={key as SocialIconProps["name"]} />

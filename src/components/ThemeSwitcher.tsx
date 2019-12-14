@@ -6,9 +6,12 @@ export const ThemeSwitcher = () => {
 
   return (
     <IconButton
-      bg="transparent"
+      variant={"outline"}
+      variantColor={"none"}
+      border={"none"}
       aria-label={`Toggle ${colorMode === "dark" ? "light" : "dark"} mode`}
       icon={colorMode === "dark" ? "sun" : "moon"}
+      color="white"
       onClick={() => toggleColorMode()}
     />
   );

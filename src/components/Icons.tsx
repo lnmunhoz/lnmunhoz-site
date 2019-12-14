@@ -31,5 +31,5 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, ...props }) => {
 };
 
 SocialIcon.defaultProps = {
-  size: 4
+  size: 6
 };

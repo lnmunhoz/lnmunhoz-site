@@ -1,26 +1,37 @@
-import React from "react";
-import { Box, Flex, useColorMode, IconButton } from "@chakra-ui/core";
+import { Box, BoxProps, useColorMode } from "@chakra-ui/core";
+import React, { useEffect } from "react";
 import { Nav } from "./Nav";
 import { Spacer } from "./Spacer";
-import { ThemeSwitcher } from "./ThemeSwitcher";
-import { Footer } from "./Footer";
+
+export const SiteWrapper: React.FC<BoxProps> = props => (
+  <Box {...props} pt={"80px"}>
+    {props.children}
+  </Box>
+);
+
+export const SiteSection: React.FC<BoxProps> = props => (
+  <Box p={5} py={5} {...props} display={"flex"} {...props}>
+    {props.children}
+  </Box>
+);
 
 export const Layout: React.FC = props => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const bg = { light: "gray.200", dark: "rgb(17, 21, 31)" };
+
+  useEffect(() => {
+    const darkMode = localStorage.getItem("darkMode");
+
+    if (darkMode === "true" && colorMode === "dark") {
+      toggleColorMode();
+    }
+  }, []);
+
   return (
-    <Box height="100%">
-      <Flex height="inherit" p={12}>
-        <Box width={[22 / 24]} position="relative">
-          <Nav />
-          <Spacer />
+    <Box bg={bg[colorMode]} minHeight="100%">
+      <Nav />
 
-          {props.children}
-
-          <Box position="absolute" right={0} top={0}>
-            <ThemeSwitcher />
-          </Box>
-        </Box>
-      </Flex>
-      <Footer />
+      <SiteWrapper>{props.children}</SiteWrapper>
     </Box>
   );
 };

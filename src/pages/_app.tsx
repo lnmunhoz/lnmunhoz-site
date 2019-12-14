@@ -1,10 +1,10 @@
 import App from "next/app";
+import Head from "next/head";
 import React from "react";
 import {
   ColorModeProvider,
   CSSReset,
   ThemeProvider,
-  theme,
   Box
 } from "@chakra-ui/core";
 
@@ -21,16 +21,25 @@ class NextApp extends App {
             html,
             body,
             #__next {
+              min-height: 100%;
               height: 100%;
-              font-family: Menlo, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+              font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
                 "Noto Color Emoji";
             }
           `}
         />
-        <ThemeProvider theme={theme}>
-          <ColorModeProvider value="dark">
+        <Head>
+          <title>lnmunhoz.dev</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+            key="viewport"
+          />
+        </Head>
+        <ThemeProvider>
+          <ColorModeProvider>
             <CSSReset />
             <Component {...pageProps} />
           </ColorModeProvider>
