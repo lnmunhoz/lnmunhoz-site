@@ -14,18 +14,17 @@ const Index = () => {
           alignItems="center"
           justifyContent="space-between"
           width={{ default: "100%", small: "100%" }}
-          maxWidth={312}
+          maxWidth={[312, 424]}
         >
-          <Heading fontSize={{ default: 22, small: 26 }}>
+          <Heading fontSize={[22, 32]}>
             Whats up! I'm
             <br />
             Lucas Munhoz
           </Heading>
 
-          <Box width={{ small: 100 }}>
+          <Box width={[120, 160]} height={120}>
             <GithubAvatar
               borderRadius={"50%"}
-              width={{ default: "100%" }}
               boxShadow={"3px 2px 5px 0px rgba(0,0,0,0.3)"}
             />
           </Box>
@@ -48,13 +47,14 @@ const Index = () => {
               JavaScript
             </Box>{" "}
             <Strong>TypeScript</Strong>.
-            <Spacer size={2} />
-            <Text>
-              On a daily basis, my goal is to create{" "}
-              <Strong>software that matters</Strong> for end users while writing
-              elegant and maintainable code, and always finding the balance
-              between quality and time.
-            </Text>
+          </Text>
+          <Spacer size={2} />
+
+          <Text fontSize={20}>
+            On a daily basis, my goal is to create{" "}
+            <Strong>software that matters</Strong> for end users while writing
+            elegant and maintainable code, and always finding the balance
+            between quality and time.
           </Text>
         </Box>
       </SiteSection>

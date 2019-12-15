@@ -18,12 +18,17 @@ class NextApp extends App {
       <>
         <Global
           styles={css`
+            @font-face {
+              font-family: "Menlo Regular";
+              src: url("/static/Menlo-Regular.woff");
+            }
+
             html,
             body,
             #__next {
               min-height: 100%;
               height: 100%;
-              font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+              font-family: Menlo, -apple-system, BlinkMacSystemFont, "Segoe UI",
                 "Helvetica Neue", Arial, "Noto Sans", sans-serif,
                 "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
                 "Noto Color Emoji";

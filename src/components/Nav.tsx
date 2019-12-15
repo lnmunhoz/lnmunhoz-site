@@ -6,7 +6,6 @@ export const Nav = () => {
   return (
     <>
       <Flex
-        fontFamily="Menlo"
         alignItems="center"
         bg={"rgb(25, 31, 44)"}
         position="fixed"
@@ -17,7 +16,9 @@ export const Nav = () => {
         justifyContent="space-between"
       >
         <Box>
-          <Text color="white">lnmunhoz.dev</Text>
+          <Text fontFamily="Menlo Regular" color="white">
+            lnmunhoz.dev
+          </Text>
           <Text opacity={0.8} fontSize={12} color="white">
             > fullStackDeveloper()
           </Text>

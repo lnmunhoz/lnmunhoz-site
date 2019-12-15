@@ -11,8 +11,8 @@ export const SocialIcons = () => (
         href={metadata.socialLinks[key]}
         prefetch={false}
         external
-        p={2}
-        height={"36px"}
+        p={3}
+        height={"48px"}
         key={key}
       >
         <SocialIcon name={key as SocialIconProps["name"]} />
