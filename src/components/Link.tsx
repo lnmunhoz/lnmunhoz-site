@@ -25,7 +25,6 @@ export const Link: React.FC<LinkProps> = ({
   ...props
 }: LinkProps) => {
   return (
-    // <NextLink href={href}>
     <ChakraLink
       ref={ref}
       href={external && String(href)}
@@ -34,6 +33,5 @@ export const Link: React.FC<LinkProps> = ({
     >
       {children}
     </ChakraLink>
-    // </NextLink>
   );
 };

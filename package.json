@@ -1,12 +1,14 @@
 {
   "name": "lnmunhoz.github.io",
   "version": "1.0.0",
-  "description": "A next chance my website ;)",
+  "description": "A next chance to my website ;)",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export",
+    "lint": "prettier ./src/**/*.{ts,tsx,json,js} --write"
   },
   "repository": {
     "type": "git",
@@ -39,8 +41,22 @@
     "@types/react": "^16.9.16",
     "babel-plugin-emotion": "^10.0.23",
     "file-loader": "^5.0.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "now": "^16.7.0",
+    "prettier": "^1.19.1",
     "typescript": "^3.7.3",
     "url-loader": "^3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,gql,graphql,json}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
