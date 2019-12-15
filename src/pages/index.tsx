@@ -9,14 +9,13 @@ const Index = () => {
   return (
     <Layout>
       <SiteSection justifyContent="center">
-        <Box width={[120, 160]} height={160}>
+        <Box width={[120, 160]} height={[120, 160]}>
           <GithubAvatar
             borderRadius={"50%"}
             boxShadow={"3px 2px 5px 0px rgba(0,0,0,0.3)"}
           />
         </Box>
       </SiteSection>
-      <Spacer size={2} />
 
       <SiteSection justifyContent="center">
         <Box maxWidth={624}>

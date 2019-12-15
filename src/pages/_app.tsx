@@ -1,14 +1,9 @@
+import { CSSReset, ThemeProvider } from "@chakra-ui/core";
+import { css, Global } from "@emotion/core";
 import App from "next/app";
 import Head from "next/head";
 import React from "react";
-import {
-  ColorModeProvider,
-  CSSReset,
-  ThemeProvider,
-  Box
-} from "@chakra-ui/core";
-
-import { Global, css } from "@emotion/core";
+import { ColorProvider } from "../components/ColorModeProvider";
 
 class NextApp extends App {
   render() {
@@ -39,10 +34,10 @@ class NextApp extends App {
           />
         </Head>
         <ThemeProvider>
-          <ColorModeProvider>
+          <ColorProvider>
             <CSSReset />
             <Component {...pageProps} />
-          </ColorModeProvider>
+          </ColorProvider>
         </ThemeProvider>
       </>
     );

@@ -1,13 +1,21 @@
 import * as React from "react";
-import { Box, Flex, Heading, Text } from "@chakra-ui/core";
+import { Box, Flex, Heading, Text, useColorMode } from "@chakra-ui/core";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export const Nav = () => {
+  const { colorMode } = useColorMode();
+  const bg = { light: "#ffffff", dark: "#1A202C" };
+
   return (
-    <Flex as="nav" width="100%" justifyContent="center" position="fixed">
+    <Flex
+      as="nav"
+      width="100%"
+      justifyContent="center"
+      position="fixed"
+      bg={bg[colorMode]}
+    >
       <Flex
         alignItems="center"
-        // bg={"rgb(25, 31, 44)"}
         maxWidth={624}
         width={"100%"}
         px={[4, 4, 0]}

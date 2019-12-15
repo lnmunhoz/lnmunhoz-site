@@ -20,14 +20,6 @@ export const Layout: React.FC = props => {
   const { colorMode, toggleColorMode } = useColorMode();
   const bg = { light: "gray.200", dark: "rgb(17, 21, 31)" };
 
-  useEffect(() => {
-    const darkMode = localStorage.getItem("darkMode");
-
-    if (colorMode === "light" && darkMode === "true") {
-      toggleColorMode();
-    }
-  }, []);
-
   return (
     <Box minHeight="100%">
       <Nav />
