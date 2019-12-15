@@ -4,29 +4,27 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export const Nav = () => {
   return (
-    <>
+    <Flex as="nav" width="100%" justifyContent="center" position="fixed">
       <Flex
         alignItems="center"
-        bg={"rgb(25, 31, 44)"}
-        position="fixed"
-        top={0}
+        // bg={"rgb(25, 31, 44)"}
+        maxWidth={624}
         width={"100%"}
-        px={4}
-        py={{ small: 3 }}
+        px={[4, 4, 0]}
+        mx={[0, -4]}
+        py={3}
         justifyContent="space-between"
+        fontFamily="Menlo"
       >
         <Box>
-          <Text fontFamily="Menlo Regular" color="white">
-            lnmunhoz.dev
-          </Text>
-          <Text opacity={0.8} fontSize={12} color="white">
+          <Text fontFamily="inherit">lnmunhoz.dev</Text>
+          <Text opacity={0.8} fontSize={12} fontFamily="inherit">
             > fullStackDeveloper()
           </Text>
         </Box>
 
         <ThemeSwitcher />
       </Flex>
-      {/* <Box as="nav">Home, About, Experience, Contact</Box> */}
-    </>
+    </Flex>
   );
 };

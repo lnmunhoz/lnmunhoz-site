@@ -1,2 +1,8 @@
-const withFonts = require("next-fonts");
-module.exports = withFonts();
+module.exports = {
+  exportTrailingSlash: true,
+  exportPathMap: function() {
+    return {
+      "/": { page: "/" }
+    };
+  }
+};

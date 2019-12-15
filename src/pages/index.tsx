@@ -1,6 +1,5 @@
-import { Box, Heading, Text, Flex } from "@chakra-ui/core";
+import { Box, Text } from "@chakra-ui/core";
 import React from "react";
-import { SocialIcons } from "../components/Footer";
 import { GithubAvatar } from "../components/GithubAvatar";
 import { Layout, SiteSection } from "../components/Layout";
 import { Spacer } from "../components/Spacer";
@@ -10,32 +9,19 @@ const Index = () => {
   return (
     <Layout>
       <SiteSection justifyContent="center">
-        <Flex
-          alignItems="center"
-          justifyContent="space-between"
-          width={{ default: "100%", small: "100%" }}
-          maxWidth={[312, 424]}
-        >
-          <Heading fontSize={[22, 32]}>
-            Whats up! I'm
-            <br />
-            Lucas Munhoz
-          </Heading>
-
-          <Box width={[120, 160]} height={120}>
-            <GithubAvatar
-              borderRadius={"50%"}
-              boxShadow={"3px 2px 5px 0px rgba(0,0,0,0.3)"}
-            />
-          </Box>
-        </Flex>
+        <Box width={[120, 160]} height={160}>
+          <GithubAvatar
+            borderRadius={"50%"}
+            boxShadow={"3px 2px 5px 0px rgba(0,0,0,0.3)"}
+          />
+        </Box>
       </SiteSection>
       <Spacer size={2} />
 
       <SiteSection justifyContent="center">
         <Box maxWidth={624}>
           <Text fontSize={20}>
-            I am passionate <Strong>full stack developer</Strong>, currently
+            I'm a passionate <Strong>full stack developer</Strong>, currently
             living in beautiful Bangkok, Thailand.
           </Text>
           <Spacer size={2} />
@@ -58,8 +44,6 @@ const Index = () => {
           </Text>
         </Box>
       </SiteSection>
-
-      <SocialIcons />
     </Layout>
   );
 };

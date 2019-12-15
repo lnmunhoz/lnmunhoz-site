@@ -11,7 +11,7 @@ export const ThemeSwitcher = () => {
       border={"none"}
       aria-label={`Toggle ${colorMode === "dark" ? "light" : "dark"} mode`}
       icon={colorMode === "dark" ? "sun" : "moon"}
-      color="white"
+      // color="white"
       onClick={() => toggleColorMode()}
     />
   );

@@ -2,15 +2,16 @@ import { Box, BoxProps, useColorMode } from "@chakra-ui/core";
 import React, { useEffect } from "react";
 import { Nav } from "./Nav";
 import { Spacer } from "./Spacer";
+import { Footer } from "./Footer";
 
 export const SiteWrapper: React.FC<BoxProps> = props => (
-  <Box {...props} pt={"80px"}>
+  <Box pt={"80px"} {...props}>
     {props.children}
   </Box>
 );
 
 export const SiteSection: React.FC<BoxProps> = props => (
-  <Box p={5} py={5} {...props} display={"flex"} {...props}>
+  <Box p={5} py={5} display={"flex"} {...props}>
     {props.children}
   </Box>
 );
@@ -22,16 +23,18 @@ export const Layout: React.FC = props => {
   useEffect(() => {
     const darkMode = localStorage.getItem("darkMode");
 
-    if (darkMode === "true" && colorMode === "dark") {
+    if (colorMode === "light" && darkMode === "true") {
       toggleColorMode();
     }
   }, []);
 
   return (
-    <Box bg={bg[colorMode]} minHeight="100%">
+    <Box minHeight="100%">
       <Nav />
-
       <SiteWrapper>{props.children}</SiteWrapper>
+
+      <Footer />
+      <Spacer />
     </Box>
   );
 };
