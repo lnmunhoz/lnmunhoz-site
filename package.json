@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "prettier ./src/**/*.{ts,tsx,json,js} --write"
+    "lint": "prettier ./src/**/*.{ts,tsx,json,js} --write",
+    "deploy": "now --prod"
   },
   "repository": {
     "type": "git",
