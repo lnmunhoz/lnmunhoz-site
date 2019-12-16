@@ -1,5 +1,6 @@
+import { Flex, PseudoBox, Text, useColorMode } from "@chakra-ui/core";
+import Link from "next/link";
 import * as React from "react";
-import { Box, Flex, Heading, Text, useColorMode } from "@chakra-ui/core";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export const Nav = () => {
@@ -24,12 +25,14 @@ export const Nav = () => {
         justifyContent="space-between"
         fontFamily="Menlo"
       >
-        <Box>
-          <Text fontFamily="inherit">lnmunhoz.dev</Text>
-          <Text opacity={0.8} fontSize={12} fontFamily="inherit">
-            > fullStackDeveloper()
-          </Text>
-        </Box>
+        <Link href="/">
+          <PseudoBox _hover={{ cursor: "pointer" }}>
+            <Text fontFamily="inherit">lnmunhoz.dev</Text>
+            <Text opacity={0.8} fontSize={12} fontFamily="inherit">
+              > fullStackDeveloper()
+            </Text>
+          </PseudoBox>
+        </Link>
 
         <ThemeSwitcher />
       </Flex>

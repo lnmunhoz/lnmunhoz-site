@@ -1,9 +1,11 @@
-import { Box, Text } from "@chakra-ui/core";
+import { Box, Text, Heading, Button } from "@chakra-ui/core";
 import React from "react";
 import { GithubAvatar } from "../components/GithubAvatar";
 import { Layout, SiteSection } from "../components/Layout";
 import { Spacer } from "../components/Spacer";
 import { Strong } from "../components/Strong";
+import Link from "next/link";
+import metadata from "../metadata";
 
 const Index = () => {
   return (
@@ -16,7 +18,6 @@ const Index = () => {
           />
         </Box>
       </SiteSection>
-
       <SiteSection justifyContent="center">
         <Box maxWidth={624}>
           <Text fontSize={20}>
@@ -41,6 +42,18 @@ const Index = () => {
             elegant and maintainable code, and always finding the balance
             between quality and time.
           </Text>
+        </Box>
+      </SiteSection>
+      <SiteSection justifyContent="center">
+        <Box maxWidth={624} width="100%">
+          <Heading size="md">More about me:</Heading>
+          <Spacer size={1} />
+
+          <Link href={metadata.routes.uses}>
+            <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
+              > Uses
+            </Button>
+          </Link>
         </Box>
       </SiteSection>
     </Layout>
