@@ -1,4 +1,4 @@
-interface IExperience {
+export interface IExperience {
   role: string;
   company: string;
   description?: string;
@@ -11,16 +11,50 @@ interface IExperience {
 
 const experience: IExperience[] = [
   {
-    role: "Software Developer Intern",
-    company: "Daxxel Sistemas e Comércio LTDA",
-    description: `This was my first job as a developer. I created new features and gave customer support on a ERP system for industrial, distribution, retail and services. The stack was VB.NET (Windows Forms) and SQL Server.`,
-    technologies: ["SQL Server", "VB.NET"],
-    location: "Location"
+    role: "Co-Founder",
+    company: "CodeChang LLC",
+    location: "Remote",
+    current: true,
+    from: "Feb 2019"
   },
   {
-    role: "Software Developer Intern",
-    company: "Arcnet Desenvolvimento de Software LTDA",
-    technologies: ["C#", "ASP.NET MVC", "Angular.js", "Knockout.js", "MongoDB"],
+    role: "Mentor",
+    company: "Codementor",
+    location: "Remote",
+    from: "Ago 2016",
+    current: true
+  },
+  {
+    role: "Software Engineer",
+    company: "Drizzle (with Toptal)",
+    technologies: ["Meteor", "React", "MongoDB"],
+    location: "Remote",
+    from: "Ago 2016",
+    to: "Feb 2017"
+  },
+  {
+    role: "Core Developer",
+    company: "Envisioning",
+    technologies: ["Meteor", "React", "ElasticSearch", "MongoDB", "CircleCI"],
+    current: true,
+    location: "Remote",
+    from: "Jan 2016"
+  },
+
+  {
+    role: "Software Engineer",
+    company: "Dobox",
+    technologies: ["Meteor", "React", "CircleCI", "MongoDB"],
+    location: "Remote",
+    from: "Apr 2016",
+    to: "Ago 2016"
+  },
+  {
+    role: "Software Developer",
+    company: "FazINOVA",
+    technologies: ["Ruby on Rails", "Postgres", "Meteor"],
+    from: "Aug 2015",
+    to: "Nov 2015",
     location: "Location"
   },
   {
@@ -28,45 +62,25 @@ const experience: IExperience[] = [
     company: "NFE.io",
     technologies: ["C#", "ASP.NET API", "SOAP"],
     from: "Dez 2014",
-    to: "Aug, 2015",
+    to: "Aug 2015",
     location: "Remote"
   },
   {
-    role: "Software Developer",
-    company: "FazINOVA",
-    technologies: ["Ruby on Rails", "Postgres", "Meteor"],
-    from: "Aug 2015",
-    to: "Nov, 2015",
-    location: "Location"
+    role: "Software Developer Intern",
+    company: "Arcnet Desenvolvimento de Software LTDA",
+    technologies: ["C#", "ASP.NET MVC", "Angular.js", "Knockout.js", "MongoDB"],
+    location: "Location",
+    from: "Apr 2013",
+    to: "Nov 2014"
   },
   {
-    role: "Software Engineer",
-    company: "Dobox",
-    technologies: ["Meteor", "React", "CircleCI", "MongoDB"],
-    location: "Remote"
-  },
-  {
-    role: "Core Developer",
-    company: "Envisioning",
-    technologies: ["Meteor", "React", "ElasticSearch", "MongoDB", "CircleCI"],
-    current: true,
-    location: "Remote"
-  },
-  {
-    role: "Software Engineer",
-    company: "Toptal",
-    technologies: ["Meteor", "React", "MongoDB"],
-    location: "Remote"
-  },
-  {
-    role: "Mentor",
-    company: "Codementor",
-    location: "Remote"
-  },
-  {
-    role: "Co-Founder",
-    company: "CodeChang LLC",
-    location: "Remote"
+    role: "Software Developer Intern",
+    company: "Daxxel Sistemas e Comércio LTDA",
+    description: `This was my first job as a developer. I created new features and gave customer support on a ERP system for industrial, distribution, retail and services. The stack was VB.NET (Windows Forms) and SQL Server.`,
+    technologies: ["SQL Server", "VB.NET"],
+    location: "Location",
+    from: "Nov 2012",
+    to: "Set 2013"
   }
 ];
 

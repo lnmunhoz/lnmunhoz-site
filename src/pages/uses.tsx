@@ -6,12 +6,14 @@ import { Layout, SiteSection } from "../components/Layout";
 import { Spacer } from "../components/Spacer";
 import metadata from "../metadata";
 import { getVariantColorByTag } from "../theming";
+import { PageHeading } from "../components/PageHeading";
+import { BackButton } from "../components/BackButton";
 
 const UsesPage = () => (
   <Layout>
     <SiteSection justifyContent="center">
       <ContentWrapper>
-        <Heading>Uses:</Heading>
+        <PageHeading title="Uses" />
         <Text>These are the tools I use daily to get things done.</Text>
 
         <Spacer />
@@ -26,11 +28,7 @@ const UsesPage = () => (
         ))}
 
         <Spacer size={2} />
-        <Link href={metadata.routes.index}>
-          <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
-            {"<"} Back
-          </Button>
-        </Link>
+        <BackButton />
       </ContentWrapper>
     </SiteSection>
   </Layout>

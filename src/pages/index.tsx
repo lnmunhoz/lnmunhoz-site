@@ -7,6 +7,8 @@ import { Spacer } from "../components/Spacer";
 import { Strong } from "../components/Strong";
 import metadata from "../metadata";
 import { ContentWrapper } from "../components/ContentWrapper";
+import { SubHeading } from "../components/SubHeading";
+import { LinkButton } from "../components/LinkButton";
 
 const styles = {
   text: {
@@ -52,20 +54,16 @@ const Index = () => {
       </SiteSection>
       <SiteSection justifyContent="center">
         <ContentWrapper>
-          <Heading size="md">More about me:</Heading>
+          <SubHeading title="More about me:" />
           <List styleType="none">
             <ListItem>
               <Link href={metadata.routes.uses}>
-                <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
-                  > Uses
-                </Button>
+                <LinkButton>> Uses</LinkButton>
               </Link>
             </ListItem>
             <ListItem>
               <Link href={metadata.routes.experience}>
-                <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
-                  > Experience
-                </Button>
+                <LinkButton>> Experience</LinkButton>
               </Link>
             </ListItem>
           </List>

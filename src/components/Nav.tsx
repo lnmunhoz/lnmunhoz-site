@@ -2,6 +2,7 @@ import { Flex, PseudoBox, Text, useColorMode } from "@chakra-ui/core";
 import Link from "next/link";
 import * as React from "react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { NAV_ZINDEX } from "../constants";
 
 export const Nav = () => {
   const { colorMode } = useColorMode();
@@ -14,6 +15,7 @@ export const Nav = () => {
       justifyContent="center"
       position="fixed"
       bg={bg[colorMode]}
+      zIndex={NAV_ZINDEX}
     >
       <Flex
         alignItems="center"
@@ -28,7 +30,7 @@ export const Nav = () => {
         <Link href="/">
           <PseudoBox _hover={{ cursor: "pointer" }}>
             <Text fontFamily="inherit">lnmunhoz.dev</Text>
-            <Text opacity={0.8} fontSize={12} fontFamily="inherit">
+            <Text fontSize={12} fontFamily="inherit">
               > fullStackDeveloper()
             </Text>
           </PseudoBox>

@@ -1,58 +1,51 @@
-import {
-  Badge,
-  Button,
-  Heading,
-  ListItem,
-  Text,
-  Box,
-  Flex
-} from "@chakra-ui/core";
-import Link from "next/link";
+import { List, ListItem } from "@chakra-ui/core";
 import React from "react";
+import { BackButton } from "../components/BackButton";
 import { ContentWrapper } from "../components/ContentWrapper";
+import { ExperienceItem } from "../components/ExperienceItem";
 import { Layout, SiteSection } from "../components/Layout";
+import { PageHeading } from "../components/PageHeading";
 import { Spacer } from "../components/Spacer";
-import metadata from "../metadata";
-import { getVariantColorByTag } from "../theming";
-import { FaRegBuilding, FaLaptopCode } from "react-icons/fa";
+import { SubHeading } from "../components/SubHeading";
+import metadata, { IExperience } from "../metadata";
 
-const UsesPage = () => (
-  <Layout>
-    <SiteSection justifyContent="center">
-      <ContentWrapper>
-        <Heading>Experience:</Heading>
-        <Spacer />
+const UsesPage = () => {
+  const currentExperience = metadata.experience.filter(e => e.current);
+  const pastExperience = metadata.experience.filter(e => !e.current);
+  const getExperienceItemKey = (exp: IExperience) =>
+    `${exp.role}_${exp.company}`;
 
-        {metadata.experience.reverse().map(exp => (
-          <Box pb={4} display="flex" alignItems="center">
-            <Box mr={5}>
-              {exp.location === "Location" ? (
-                <FaRegBuilding size={24} opacity={0.8} />
-              ) : (
-                <FaLaptopCode size={24} opacity={0.8} />
-              )}
-            </Box>
-            <Box>
-              <Flex alignItems="center">
-                <Heading size={"sm"}>{exp.role}</Heading>
-                {exp.current && <Badge ml={2}>Current</Badge>}
-                {exp.location === "Remote" && <Badge ml={2}>Remote</Badge>}
-              </Flex>
+  return (
+    <Layout>
+      <SiteSection>
+        <ContentWrapper>
+          <PageHeading title="Experience" />
+          <SubHeading title="Current:" />
 
-              <Text>{exp.company}</Text>
-            </Box>
-          </Box>
-        ))}
+          <List styleType="none">
+            {currentExperience.map(exp => (
+              <ListItem p={5}>
+                <ExperienceItem {...exp} key={getExperienceItemKey(exp)} />
+              </ListItem>
+            ))}
+          </List>
 
-        <Spacer size={2} />
-        <Link href={metadata.routes.index}>
-          <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
-            {"<"} Back
-          </Button>
-        </Link>
-      </ContentWrapper>
-    </SiteSection>
-  </Layout>
-);
+          <Spacer size={2} />
+          <SubHeading title="Previous:" />
+          <List styleType="none">
+            {pastExperience.map(exp => (
+              <ListItem p={5}>
+                <ExperienceItem {...exp} key={getExperienceItemKey(exp)} />
+              </ListItem>
+            ))}
+          </List>
+
+          <Spacer size={2} />
+          <BackButton />
+        </ContentWrapper>
+      </SiteSection>
+    </Layout>
+  );
+};
 
 export default UsesPage;
