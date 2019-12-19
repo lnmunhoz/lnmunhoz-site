@@ -24,7 +24,7 @@ const UsesPage = () => {
 
           <List styleType="none">
             {currentExperience.map(exp => (
-              <ListItem p={5}>
+              <ListItem>
                 <ExperienceItem {...exp} key={getExperienceItemKey(exp)} />
               </ListItem>
             ))}
@@ -34,7 +34,7 @@ const UsesPage = () => {
           <SubHeading title="Previous:" />
           <List styleType="none">
             {pastExperience.map(exp => (
-              <ListItem p={5}>
+              <ListItem>
                 <ExperienceItem {...exp} key={getExperienceItemKey(exp)} />
               </ListItem>
             ))}
