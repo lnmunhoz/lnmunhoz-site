@@ -17,7 +17,7 @@ const UsesPage = () => {
 
   return (
     <Layout>
-      <SiteSection>
+      <SiteSection justifyContent="center">
         <ContentWrapper>
           <PageHeading title="Experience" />
           <SubHeading title="Current:" />
