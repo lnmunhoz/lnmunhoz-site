@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Text } from "@chakra-ui/core";
+import { Box, Button, Heading, Text, ListItem, List } from "@chakra-ui/core";
 import Link from "next/link";
 import React from "react";
 import { GithubAvatar } from "../components/GithubAvatar";
@@ -34,7 +34,7 @@ const Index = () => {
           </Text>
           <Text {...styles.text}>
             For the past 8 years, I've had the opportunity to work with a
-            variety of technolgies including .NET, Python, Ruby, and most
+            variety of technologies including .NET, Python, Ruby, and most
             recently, a ton of{" "}
             <Box as="span" textDecoration="line-through">
               JavaScript
@@ -53,11 +53,22 @@ const Index = () => {
       <SiteSection justifyContent="center">
         <ContentWrapper>
           <Heading size="md">More about me:</Heading>
-          <Link href={metadata.routes.uses}>
-            <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
-              > Uses
-            </Button>
-          </Link>
+          <List styleType="none">
+            <ListItem>
+              <Link href={metadata.routes.uses}>
+                <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
+                  > Uses
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href={metadata.routes.experience}>
+                <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
+                  > Experience
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
         </ContentWrapper>
       </SiteSection>
     </Layout>
