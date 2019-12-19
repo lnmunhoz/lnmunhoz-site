@@ -1,8 +1,10 @@
-import { Box, BoxProps, useColorMode } from "@chakra-ui/core";
-import React, { useEffect } from "react";
+import { Box, BoxProps } from "@chakra-ui/core";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/dist/client/router";
+import React from "react";
+import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 import { Spacer } from "./Spacer";
-import { Footer } from "./Footer";
 
 export const SiteWrapper: React.FC<BoxProps> = props => (
   <Box pt={"80px"} {...props}>
@@ -17,16 +19,29 @@ export const SiteSection: React.FC<BoxProps> = props => (
 );
 
 export const Layout: React.FC = props => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const bg = { light: "gray.200", dark: "rgb(17, 21, 31)" };
+  const router = useRouter();
 
   return (
-    <Box minHeight="100%">
-      <Nav />
-      <SiteWrapper>{props.children}</SiteWrapper>
+    <AnimatePresence exitBeforeEnter key={router.route}>
+      <Box minHeight="100%">
+        <Nav />
+        <SiteWrapper>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: { opacity: 1 },
+              hidden: { opacity: 0 }
+            }}
+            exit={{ opacity: 0, scale: 0 }}
+          >
+            {props.children}
+          </motion.div>
+        </SiteWrapper>
 
-      <Footer />
-      <Spacer />
-    </Box>
+        <Footer />
+        <Spacer />
+      </Box>
+    </AnimatePresence>
   );
 };

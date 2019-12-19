@@ -1,11 +1,19 @@
-import { Box, Text, Heading, Button } from "@chakra-ui/core";
+import { Box, Button, Heading, Text } from "@chakra-ui/core";
+import Link from "next/link";
 import React from "react";
 import { GithubAvatar } from "../components/GithubAvatar";
 import { Layout, SiteSection } from "../components/Layout";
 import { Spacer } from "../components/Spacer";
 import { Strong } from "../components/Strong";
-import Link from "next/link";
 import metadata from "../metadata";
+import { ContentWrapper } from "../components/ContentWrapper";
+
+const styles = {
+  text: {
+    pb: 8,
+    fontSize: 20
+  }
+};
 
 const Index = () => {
   return (
@@ -19,13 +27,12 @@ const Index = () => {
         </Box>
       </SiteSection>
       <SiteSection justifyContent="center">
-        <Box maxWidth={624}>
-          <Text fontSize={20}>
+        <ContentWrapper>
+          <Text {...styles.text}>
             I'm a passionate <Strong>full stack developer</Strong>, currently
             living in beautiful Bangkok, Thailand.
           </Text>
-          <Spacer size={2} />
-          <Text fontSize={20}>
+          <Text {...styles.text}>
             For the past 8 years, I've had the opportunity to work with a
             variety of technolgies including .NET, Python, Ruby, and most
             recently, a ton of{" "}
@@ -34,27 +41,24 @@ const Index = () => {
             </Box>{" "}
             <Strong>TypeScript</Strong>.
           </Text>
-          <Spacer size={2} />
 
-          <Text fontSize={20}>
+          <Text {...styles.text}>
             On a daily basis, my goal is to create{" "}
             <Strong>software that matters</Strong> for end users while writing
             elegant and maintainable code, and always finding the balance
             between quality and time.
           </Text>
-        </Box>
+        </ContentWrapper>
       </SiteSection>
       <SiteSection justifyContent="center">
-        <Box maxWidth={624} width="100%">
+        <ContentWrapper>
           <Heading size="md">More about me:</Heading>
-          <Spacer size={1} />
-
           <Link href={metadata.routes.uses}>
             <Button variantColor="blue" variant="ghost" fontFamily="Menlo">
               > Uses
             </Button>
           </Link>
-        </Box>
+        </ContentWrapper>
       </SiteSection>
     </Layout>
   );
