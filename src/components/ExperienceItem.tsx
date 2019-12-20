@@ -103,13 +103,15 @@ export const ExperienceItem = (props: IExperience) => {
           )}
           {props.technologies && (
             <Flex mt={3} alignItems="center">
-              <Box>
+              <Box mb={1}>
                 <FaLayerGroup size={20} />
               </Box>
               <Flex px={4} flexWrap="wrap">
                 {props.technologies?.map(tech => (
-                  <Box mr={3} display="inline-block">
+                  <Box display="inline-block">
                     <Badge
+                      marginBottom={1}
+                      marginRight={1}
                       fontFamily={FONT_MENLO}
                       variantColor="blue"
                       px={2}
