@@ -1,10 +1,11 @@
 import { Box, BoxProps } from "@chakra-ui/core";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/dist/client/router";
-import React from "react";
+import React, { useEffect } from "react";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 import { Spacer } from "./Spacer";
+import { trackPageView } from "../analytics";
 
 export const SiteWrapper: React.FC<BoxProps> = props => (
   <Box pt={"80px"} {...props}>
@@ -20,6 +21,10 @@ export const SiteSection: React.FC<BoxProps> = props => (
 
 export const Layout: React.FC = props => {
   const router = useRouter();
+
+  useEffect(() => {
+    trackPageView();
+  }, []);
 
   return (
     <AnimatePresence exitBeforeEnter key={router.route}>
