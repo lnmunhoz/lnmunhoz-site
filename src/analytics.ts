@@ -8,8 +8,6 @@ export function trackPageView() {
   if (!window.GA_INITIALIZED) {
     ReactGA.initialize("UA-154925075-1");
 
-    console.log("Initialized");
-
     // @ts-ignore
     window.GA_INITIALIZED = true;
   }
