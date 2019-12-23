@@ -6,7 +6,7 @@ export interface PageHeadingProps extends HeadingProps {
 }
 
 export const PageHeading = (props: PageHeadingProps) => (
-  <Heading fontFamily="Menlo" mb={5} {...props}>
+  <Heading as="h1" fontSize={[28, 30]} fontFamily="Menlo" mb={5} {...props}>
     > {props.title}
   </Heading>
 );

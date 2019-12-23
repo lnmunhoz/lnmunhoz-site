@@ -17,9 +17,12 @@ const UsesPage = () => {
 
   return (
     <Layout>
-      <SiteSection justifyContent="center">
-        <ContentWrapper>
+      <ContentWrapper>
+        <SiteSection>
           <PageHeading title="Experience" />
+        </SiteSection>
+
+        <SiteSection justifyContent="center">
           <SubHeading title="Current:" />
 
           <List styleType="none">
@@ -42,8 +45,8 @@ const UsesPage = () => {
 
           <Spacer size={2} />
           <BackButton />
-        </ContentWrapper>
-      </SiteSection>
+        </SiteSection>
+      </ContentWrapper>
     </Layout>
   );
 };

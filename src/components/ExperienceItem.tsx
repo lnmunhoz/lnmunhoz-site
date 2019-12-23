@@ -33,7 +33,8 @@ export const ExperienceItem = (props: IExperience) => {
 
   return (
     <PseudoBox
-      p={5}
+      px={[3, 4, 5]}
+      py={[5]}
       onClick={toggleExpanded}
       transition="background 0.25s ease"
       borderRadius={3}

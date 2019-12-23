@@ -13,7 +13,7 @@ export const SiteWrapper: React.FC<BoxProps> = props => (
 );
 
 export const SiteSection: React.FC<BoxProps> = props => (
-  <Box p={5} py={5} display={"flex"} {...props}>
+  <Box px={[3, 4, 0]} py={[3, 4, 5]} {...props}>
     {props.children}
   </Box>
 );

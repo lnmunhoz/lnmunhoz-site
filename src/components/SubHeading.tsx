@@ -10,7 +10,14 @@ export const SubHeading = (props: HeadingProps) => {
   const { title, ...rest } = props;
 
   return (
-    <Heading size="lg" fontFamily={FONT_MENLO} pb={5} {...rest}>
+    <Heading
+      size="lg"
+      as="h2"
+      fontSize={[22, 24]}
+      fontFamily={FONT_MENLO}
+      pb={5}
+      {...rest}
+    >
       {title}
     </Heading>
   );

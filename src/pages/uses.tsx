@@ -11,13 +11,13 @@ import { BackButton } from "../components/BackButton";
 
 const UsesPage = () => (
   <Layout>
-    <SiteSection justifyContent="center">
-      <ContentWrapper>
+    <ContentWrapper>
+      <SiteSection>
         <PageHeading title="Uses" />
         <Text>These are the tools I use daily to get things done.</Text>
+      </SiteSection>
 
-        <Spacer />
-
+      <SiteSection>
         {metadata.uses.map(tool => (
           <ListItem fontFamily="Menlo" lineHeight={1.8} key={tool.name}>
             {tool.name}{" "}
@@ -29,8 +29,8 @@ const UsesPage = () => (
 
         <Spacer size={2} />
         <BackButton />
-      </ContentWrapper>
-    </SiteSection>
+      </SiteSection>
+    </ContentWrapper>
   </Layout>
 );
 
