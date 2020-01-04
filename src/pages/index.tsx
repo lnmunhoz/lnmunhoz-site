@@ -1,22 +1,13 @@
-import {
-  Box,
-  Button,
-  Heading,
-  Text,
-  ListItem,
-  List,
-  Flex
-} from "@chakra-ui/core";
+import { Box, Flex, List, ListItem, Text } from "@chakra-ui/core";
 import Link from "next/link";
 import React from "react";
+import { ContentWrapper } from "../components/ContentWrapper";
 import { GithubAvatar } from "../components/GithubAvatar";
 import { Layout, SiteSection } from "../components/Layout";
-import { Spacer } from "../components/Spacer";
-import { Strong } from "../components/Strong";
-import metadata from "../metadata";
-import { ContentWrapper } from "../components/ContentWrapper";
-import { SubHeading } from "../components/SubHeading";
 import { LinkButton } from "../components/LinkButton";
+import { Strong } from "../components/Strong";
+import { SubHeading } from "../components/SubHeading";
+import metadata from "../metadata";
 
 const styles = {
   text: {
@@ -56,8 +47,8 @@ const Index = () => {
           <Text {...styles.text}>
             On a daily basis, my goal is to create{" "}
             <Strong>software that matters</Strong> for end users while writing
-            elegant and maintainable code, and always finding the balance
-            between quality and time.
+            elegant and maintainable code, always finding the balance between
+            quality and time.
           </Text>
         </SiteSection>
         <SiteSection justifyContent="center">
