@@ -10,28 +10,26 @@ import { PageHeading } from "../components/PageHeading";
 import { BackButton } from "../components/BackButton";
 
 const UsesPage = () => (
-  <Layout>
-    <ContentWrapper>
-      <SiteSection>
-        <PageHeading title="Uses" />
-        <Text>These are the tools I use daily to get things done.</Text>
-      </SiteSection>
+  <ContentWrapper>
+    <SiteSection>
+      <PageHeading title="Uses" />
+      <Text>These are the tools I use daily to get things done.</Text>
+    </SiteSection>
 
-      <SiteSection>
-        {metadata.uses.map(tool => (
-          <ListItem fontFamily="Menlo" lineHeight={1.8} key={tool.name}>
-            {tool.name}{" "}
-            <Badge variantColor={getVariantColorByTag(tool.tag)}>
-              {tool.tag}
-            </Badge>
-          </ListItem>
-        ))}
+    <SiteSection>
+      {metadata.uses.map(tool => (
+        <ListItem fontFamily="Menlo" lineHeight={1.8} key={tool.name}>
+          {tool.name}{" "}
+          <Badge variantColor={getVariantColorByTag(tool.tag)}>
+            {tool.tag}
+          </Badge>
+        </ListItem>
+      ))}
 
-        <Spacer size={2} />
-        <BackButton />
-      </SiteSection>
-    </ContentWrapper>
-  </Layout>
+      <Spacer size={2} />
+      <BackButton />
+    </SiteSection>
+  </ContentWrapper>
 );
 
 export default UsesPage;

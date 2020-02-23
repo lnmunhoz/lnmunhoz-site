@@ -16,38 +16,36 @@ const UsesPage = () => {
     `${exp.role}_${exp.company}`;
 
   return (
-    <Layout>
-      <ContentWrapper>
-        <SiteSection>
-          <PageHeading title="Experience" />
-        </SiteSection>
+    <ContentWrapper>
+      <SiteSection>
+        <PageHeading title="Experience" />
+      </SiteSection>
 
-        <SiteSection justifyContent="center">
-          <SubHeading title="Current:" />
+      <SiteSection justifyContent="center">
+        <SubHeading title="Current:" />
 
-          <List styleType="none">
-            {currentExperience.map(exp => (
-              <ListItem mb={2} key={getExperienceItemKey(exp)}>
-                <ExperienceItem {...exp} />
-              </ListItem>
-            ))}
-          </List>
+        <List styleType="none">
+          {currentExperience.map(exp => (
+            <ListItem mb={2} key={getExperienceItemKey(exp)}>
+              <ExperienceItem {...exp} />
+            </ListItem>
+          ))}
+        </List>
 
-          <Spacer size={2} />
-          <SubHeading title="Previous:" />
-          <List styleType="none">
-            {pastExperience.map(exp => (
-              <ListItem mb={2} key={getExperienceItemKey(exp)}>
-                <ExperienceItem {...exp} />
-              </ListItem>
-            ))}
-          </List>
+        <Spacer size={2} />
+        <SubHeading title="Previous:" />
+        <List styleType="none">
+          {pastExperience.map(exp => (
+            <ListItem mb={2} key={getExperienceItemKey(exp)}>
+              <ExperienceItem {...exp} />
+            </ListItem>
+          ))}
+        </List>
 
-          <Spacer size={2} />
-          <BackButton />
-        </SiteSection>
-      </ContentWrapper>
-    </Layout>
+        <Spacer size={2} />
+        <BackButton />
+      </SiteSection>
+    </ContentWrapper>
   );
 };
 

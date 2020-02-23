@@ -1,10 +1,11 @@
 import { Flex, PseudoBox, Text, useColorMode } from "@chakra-ui/core";
 import Link from "next/link";
 import * as React from "react";
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import Typed from "react-typed";
 import { NAV_ZINDEX } from "../constants";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
-export const Nav = () => {
+export const Nav = React.memo(() => {
   const { colorMode } = useColorMode();
   const bg = { light: "#ffffff", dark: "#1A202C" };
 
@@ -31,7 +32,12 @@ export const Nav = () => {
           <PseudoBox _hover={{ cursor: "pointer" }}>
             <Text fontFamily="inherit">lnmunhoz.dev</Text>
             <Text fontSize={12} fontFamily="inherit">
-              > fullStackDeveloper()
+              >{" "}
+              <Typed
+                strings={["", "fullStackDeveloper()"]}
+                typeSpeed={30}
+                showCursor={false}
+              />
             </Text>
           </PseudoBox>
         </Link>
@@ -40,4 +46,4 @@ export const Nav = () => {
       </Flex>
     </Flex>
   );
-};
+});

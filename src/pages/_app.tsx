@@ -4,6 +4,7 @@ import App from "next/app";
 import Head from "next/head";
 import React from "react";
 import { ColorProvider } from "../components/ColorModeProvider";
+import { Layout } from "../components/Layout";
 
 class NextApp extends App {
   render() {
@@ -36,7 +37,9 @@ class NextApp extends App {
         <ThemeProvider>
           <ColorProvider>
             <CSSReset />
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </ColorProvider>
         </ThemeProvider>
       </>

@@ -27,26 +27,28 @@ export const Layout: React.FC = props => {
   }, []);
 
   return (
-    <AnimatePresence exitBeforeEnter key={router.route}>
-      <Box minHeight="100%">
-        <Nav />
-        <SiteWrapper>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              visible: { opacity: 1 },
-              hidden: { opacity: 0 }
-            }}
-            exit={{ opacity: 0, scale: 0 }}
-          >
-            {props.children}
-          </motion.div>
-        </SiteWrapper>
+    <>
+      <Nav />
+      <AnimatePresence exitBeforeEnter key={router.route}>
+        <Box minHeight="100%">
+          <SiteWrapper>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 }
+              }}
+              exit={{ opacity: 0, scale: 0 }}
+            >
+              {props.children}
+            </motion.div>
+          </SiteWrapper>
 
-        <Footer />
-        <Spacer />
-      </Box>
-    </AnimatePresence>
+          <Footer />
+          <Spacer />
+        </Box>
+      </AnimatePresence>
+    </>
   );
 };
