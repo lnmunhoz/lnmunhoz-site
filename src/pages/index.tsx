@@ -1,4 +1,12 @@
-import { Box, Flex, List, ListItem, Text } from "@chakra-ui/core";
+import {
+  Box,
+  Flex,
+  List,
+  ListItem,
+  Text,
+  Image,
+  useColorMode
+} from "@chakra-ui/core";
 import Link from "next/link";
 import React from "react";
 import { ContentWrapper } from "../components/ContentWrapper";
@@ -8,6 +16,7 @@ import { LinkButton } from "../components/LinkButton";
 import { Strong } from "../components/Strong";
 import { SubHeading } from "../components/SubHeading";
 import metadata from "../metadata";
+import { Pegasus } from "../components/Pegasus";
 
 const styles = {
   text: {
@@ -19,6 +28,7 @@ const styles = {
 const Index = () => {
   return (
     <ContentWrapper>
+      <Pegasus />
       <SiteSection justifyContent="center" display="flex">
         <Flex width={[120, 160]} height={[120, 160]}>
           <GithubAvatar
